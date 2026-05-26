@@ -8,7 +8,6 @@ from collections.abc import AsyncIterator, Mapping, Sequence
 from dataclasses import dataclass, field
 from typing import Any, Literal, Protocol
 
-
 EventType = Literal[
     "thinking",
     "tool_call",

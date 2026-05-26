@@ -48,6 +48,20 @@ disallow_untyped_defs = true
 module = ["frontmatter.*"]
 ignore_missing_imports = true
 
+# Tests are checked under non-strict rules — the `app` package carries
+# the strict surface (see DoD #7). Test helpers freely use ``Any`` and
+# untyped pytest fixtures.
+[[tool.mypy.overrides]]
+module = ["tests.*"]
+disallow_untyped_defs = false
+disallow_incomplete_defs = false
+disallow_untyped_calls = false
+disallow_untyped_decorators = false
+check_untyped_defs = false
+warn_return_any = false
+disallow_any_generics = false
+warn_unused_ignores = false
+
 [tool.pytest.ini_options]
 asyncio_mode = "auto"
 testpaths = ["tests"]

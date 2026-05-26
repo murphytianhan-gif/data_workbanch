@@ -8,7 +8,6 @@ from collections.abc import AsyncIterator, Mapping, Sequence
 from dataclasses import dataclass
 from typing import Any, Literal, Protocol
 
-
 Role = Literal["system", "user", "assistant", "tool"]
 
 
