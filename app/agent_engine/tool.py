@@ -36,8 +36,8 @@ class ToolContext(Protocol):
     session_id: str
     agent_id: str
     user_id: str
-    storage: "StorageProtocol"
-    emit: Callable[["SessionEvent"], Awaitable[None]]
+    storage: StorageProtocol
+    emit: Callable[[SessionEvent], Awaitable[None]]
 
 
 class Tool(Protocol):
